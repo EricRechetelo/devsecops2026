@@ -24,3 +24,9 @@ def testar_pagina_inicial():
 
     assert requisicao.status_code == 200
     assert requisicao.json() == {"mensagem": "Funcionando!"}
+
+def testar_nome_completo():
+    requisicao = CLIENT.get("/autor")
+
+    assert requisicao.status_code == 200
+    assert requisicao.json() == {"mensagem": "Pedro Rocha Horchulhack"}
